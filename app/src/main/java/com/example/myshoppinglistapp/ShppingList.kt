@@ -42,6 +42,7 @@ data class ShoppingItem (val id : Int,
 @Composable
 fun ShoppingListApp(){
 
+    // 초기 상태는 4개가 존재합니다.
     var showDialog by remember { mutableStateOf(false)}
     var sItems by remember { mutableStateOf(listOf<ShoppingItem>())}
     var itemName by remember { mutableStateOf("") };
@@ -56,10 +57,9 @@ fun ShoppingListApp(){
 
         Button(
             onClick = { showDialog = true },
-            modifier = Modifier.align (Alignment.CenterHorizontally)
+            modifier = Modifier.align(Alignment.CenterHorizontally)
         ) {
-            val doubleNumber : (a : Int) -> Int = {a -> a+10};
-            Text(doubleNumber(10).toString())
+            Text("Post")
         }
 
         LazyColumn(
